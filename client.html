@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>gunLocal Client</title>
+    <script src="https://cdn.rawgit.com/amark/gun/master/gun.js" charset="utf-8"></script>
+  </head>
+  <body>
+    Use debug console
+  </body>
+  <script type="text/javascript">
+    var peers = ['http://localhost:8080' + '/gun']
+    var gun = Gun(peers, {localStorage:false})
+  </script>
+</html>
