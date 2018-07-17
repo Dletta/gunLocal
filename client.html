@@ -11,5 +11,17 @@
   <script type="text/javascript">
     var peers = ['http://localhost:8080' + '/gun']
     var gun = Gun(peers, {localStorage:false})
+
+    function print(val,key){
+      console.log(key,val);
+
+    }
+
+    function writeTest(root){
+      for(var i=0;i<1000;i++){
+        var t = 'test' + i
+        root.put({name:t,number:i})
+      }
+    }
   </script>
 </html>
