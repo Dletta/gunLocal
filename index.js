@@ -5,13 +5,14 @@ var server = require('http').createServer().listen(8080);
 var gun = Gun({
   localStorage: false,
   super: true,
+  wait:7000;
   web: server
 })
 
 var app = gun.get('app').put({name:'app', type:'root'})
 /*app.on((data)=>{console.log(data)})*/
 var foo = []
-app.on((val,key)=>{foo.push([key,val])})
+app.on((val,key)=>{foo.push([key,val])}, true)
 
 var start = process.hrtime()
 console.log('write started');
