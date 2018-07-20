@@ -5,7 +5,7 @@ var server = require('http').createServer().listen(8080);
 var gun = Gun({
   localStorage: false,
   super: true,
-  wait:7000;
+  wait:7000,
   web: server
 })
 
