@@ -1,16 +1,23 @@
-const Gun = require('gun')
 process.env.GUN_ENV = 'production';
+const Gun = require('gun')
+require('gun-file')
 
 var server = require('http').createServer().listen(8080);
 var gun = Gun({
-  localStorage: false,
+  /*localStorage: false,
   super: true,
-  wait:7000,
-  web: server
+  chunk: 5 * 1024,
+  batch: 100,*/
+  web: server,
+  file : false,
+  'file-name': 'service.gun',
+  'file-mode' : 0666,
+  'file-pretty' : true,
+  'file-delay' : 100
 })
-
+/*
 var app = gun.get('app').put({name:'app', type:'root'})
-/*app.on((data)=>{console.log(data)})*/
+app.on((data)=>{console.log(data)})
 var foo = []
 app.on((val,key)=>{foo.push([key,val])}, true)
 
@@ -31,10 +38,11 @@ app.get('test1').once((node,key)=>{console.log(key,node);})
 app.get('test100').once((node,key)=>{console.log(key,node);})
 app.get('test500').once((node,key)=>{console.log(key,node);})
 for (var y = 0; y < rEnd; y++) {
-  app.get('test'+y).once((node,key)=>{console.log(key);})
+  app.get('test'+y).once((node,key)=>{})
 }
 console.log(`read end ${process.hrtime(start)}`);
 var logTime = function(){
   console.log(foo);
 }
 setTimeout(logTime, 10000)
+*/
