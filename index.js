@@ -23,7 +23,7 @@ for (var i = 0; i < end; i++) {
   app.get('test'+i).put({name:'test'+i})
 }
 console.log(`write end ${process.hrtime(start)}`);
-
+/*
 var start = process.hrtime()
 console.log('read started');
 var y = 0;
@@ -39,3 +39,4 @@ var logTime = function(){
   console.log(foo);
 }
 setTimeout(logTime, 10000)
+*/
