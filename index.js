@@ -1,21 +1,15 @@
 process.env.GUN_ENV = 'production';
 const Gun = require('gun')
-require('gun-file')
 
 var server = require('http').createServer().listen(8080);
 var gun = Gun({
-  /*localStorage: false,
+  localStorage: false,
   super: true,
-  chunk: 5 * 1024,
-  batch: 100,*/
-  web: server,
-  file : false,
-  'file-name': 'service.gun',
-  'file-mode' : 0666,
-  'file-pretty' : true,
-  'file-delay' : 100
+  chunk: 10 * 1024 * 1024,
+  batch: 100,
+  web: server
 })
-/*
+
 var app = gun.get('app').put({name:'app', type:'root'})
 app.on((data)=>{console.log(data)})
 var foo = []
@@ -45,4 +39,3 @@ var logTime = function(){
   console.log(foo);
 }
 setTimeout(logTime, 10000)
-*/
