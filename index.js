@@ -12,17 +12,20 @@ var gun = Gun({
 
 var app = gun.get('app').put({name:'app', type:'root'})
 app.on((data)=>{console.log(data)})
+/*
 var foo = []
 app.on((val,key)=>{foo.push([key,val])}, true)
+*/
 
 var start = process.hrtime()
 console.log('write started');
 var i = 0;
-var end = 5002;
+var end = 102;
 for (var i = 0; i < end; i++) {
   app.get('test'+i).put({name:'test'+i})
 }
 console.log(`write end ${process.hrtime(start)}`);
+
 /*
 var start = process.hrtime()
 console.log('read started');

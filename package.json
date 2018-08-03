@@ -9,7 +9,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "gun": "^0.9.9994",
-    "gun-file": "^1.0.123"
+    "gun": "^0.9.9994"
   }
 }
