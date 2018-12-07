@@ -9,6 +9,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "gun": "^0.9.9998"
+    "gun": "^0.9.99999"
   }
 }
