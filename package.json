@@ -9,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "express": "^4.16.4",
     "gun": "^0.9.99999"
   }
 }
